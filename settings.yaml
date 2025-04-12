@@ -1,0 +1,83 @@
+database:
+  host: 0.0.0.0
+  port: 5432
+  name: teneo
+  user: postgres
+  password: 123456
+
+registration:
+  threads: 3
+  delay: 10  # seconds between registrations
+  
+email:
+  mode: "single_imap"  # Possible values: "single_imap", "multi_imap", "forwarding"
+  check_interval: 10  # seconds
+  timeout: 30  # seconds
+  
+  # Settings for single_imap mode
+  single_imap:
+    host: "mail.adm.tools"
+    port: 993
+    username: ""
+    password: ""
+    ssl: true
+    
+  # Settings for multi_imap mode
+  multi_imap:
+    gmail:
+      host: "imap.gmail.com"
+      port: 993
+      ssl: true
+    outlook:
+      host: "outlook.office365.com"
+      port: 993
+      ssl: true
+    yahoo:
+      host: "imap.mail.yahoo.com"
+      port: 993
+      ssl: true
+      
+  # Settings for forwarding mode
+  forwarding:
+    main_email:
+      host: "imap.gmail.com"
+      port: 993
+      username: ""
+      password: ""
+      ssl: true
+
+captcha:
+  solver: "capsolver"  # Possible values: "2captcha", "capsolver"
+  2captcha:
+    api_key: ""  # API key from 2captcha
+  capsolver:
+    api_key: ""  # Add your API key from Capsolver
+  site_key: "0x4AAAAAAAkhmGkb2VS6MRU0"  # Site key for Turnstile
+  page_url: "https://dashboard.teneo.pro/auth"
+
+proxy:
+  enabled: true
+  timeout: 30
+  check_url: "https://google.com"
+
+farming:
+  batch_size: 100  # number of accounts in one batch
+  batch_delay: 5  # delay between batches in seconds
+  account_delay: 1  # delay between accounts in batch in seconds
+  ping_interval: 10  # ping sending interval in seconds
+  worker_processes: 4  # number of processes for message processing
+  start_threads: 5  # number of initial threads for farming startup
+
+websocket:
+  ping_interval: 10  # seconds
+
+logging:
+  level: INFO
+  retention_days: 7
+  path: ./logs
+  debug: false  # Enable detailed debug information
+
+paths:
+  proxies: ./data/proxies.txt
+  wallets: ./data/wallets.txt
+  accounts: ./data/accounts.txt 
