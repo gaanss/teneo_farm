@@ -4,7 +4,7 @@
 
 > **Note:** This is paid software. 
 > You can ask me to provide a license for 1 day for testing. 
-> To purchase, contact via Telegram: [@gans](https://t.me/gans_developer)
+> To purchase, contact via Telegram: [@gaansss](https://t.me/gaansss)
 
 Teneo Farm is an automation tool for managing account registration and farming on the Teneo platform.
 
@@ -195,4 +195,4 @@ Neon provides a generous free tier with:
 
 ## Support 📞
 
-For support, please contact the developer via Telegram: [@gans](https://t.me/gans_developer) 
+For support, please contact the developer via Telegram: [@gaansss](https://t.me/gaansss) 
