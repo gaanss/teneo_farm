@@ -3,7 +3,6 @@
 ![Teneo Farm](https://img.shields.io/badge/Teneo-Farm-blue)
 
 > **Note:** This is paid software. 
-> You can ask me to provide a license for 1 day for testing. 
 > To purchase, contact via Telegram: [@gaansss](https://t.me/gaansss)
 
 Teneo Farm is an automation tool for managing account registration and farming on the Teneo platform.
