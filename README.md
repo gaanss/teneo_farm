@@ -1,10 +1,16 @@
 # Teneo Farm 🚀
 
-![Teneo Farm](https://img.shields.io/badge/Teneo-Farm-blue)
+<p align="center">
+  <a href="https://t.me/gans_software">
+    <img src="https://img.shields.io/badge/Telegram-Channel-blue?style=for-the-badge&logo=telegram" alt="Telegram Channel">
+  </a>
+  <a href="https://t.me/ganssoftwarechat">
+    <img src="https://img.shields.io/badge/Telegram-Chat-blue?style=for-the-badge&logo=telegram" alt="Telegram Chat">
+  </a>
+</p>
 
-> **Note:** This is paid software. Each running instance costs $150. 
-> You can ask me to provide a license for 1 day for testing. 
-> To purchase, contact via Telegram: [@gans](https://t.me/gans_developer)
+> **Note:** This is paid software. 
+> To purchase, contact via Telegram: [@gaansss](https://t.me/gaansss)
 
 Teneo Farm is an automation tool for managing account registration and farming on the Teneo platform.
 
@@ -195,4 +201,4 @@ Neon provides a generous free tier with:
 
 ## Support 📞
 
-For support, please contact the developer via Telegram: [@gans](https://t.me/gans_developer) 
+For support, please contact the developer via Telegram: [@gaansss](https://t.me/gaansss) 
