@@ -40,10 +40,9 @@ Teneo Farm is an automation tool for managing account registration and farming o
 
 ## Configuration ⚙️
 
-Main settings in the `settings.yaml` file:
+Edit the `settings.yaml` to match your environment:
 
 ```yaml
-# Database configuration
 database:
   host: your_database_host
   port: 5432
@@ -51,19 +50,44 @@ database:
   user: your_database_user
   password: your_database_password
 
-# Farming configuration
-farming:
-  batch_size: 100  # number of accounts in one batch
-  batch_delay: 5  # delay between batches in seconds
-  account_delay: 1  # delay between accounts in batch in seconds
-  ping_interval: 10  # ping sending interval in seconds
-  worker_processes: 4  # number of processes for message processing
-  start_threads: 5  # number of initial threads for farming startup
+captcha:
+  solver: "2captcha"      # or "capsolver"
+  api_key: "YOUR_API_KEY"
 
-# Registration configuration
 registration:
-  threads: 3
-  delay: 10  # seconds between registrations
+  threads: 1              # concurrent registrations
+  delay_min: 1            # minimum delay between registrations (seconds)
+  delay_max: 5            # maximum delay between registrations (seconds)
+
+farming:
+  threads: 5              # concurrent farming connections
+  delay_min: 10           # minimum delay before each farming start (seconds)
+  delay_max: 15           # maximum delay before each farming start (seconds)
+
+email:
+  mode: "single_imap"     # single_imap | multi_imap | forwarding
+  single_imap:
+    host: "imap.example.com"
+  multi_imap:
+    gmail: "imap.gmail.com"
+    outlook: "imap.mail.outlook.com"
+    yahoo: "imap.mail.yahoo.com"
+  forwarding:
+    host: "imap.gmail.com"
+    username: your_email@example.com
+    password: your_email_password
+
+logging:
+  level: INFO             # DEBUG | INFO | WARNING | ERROR
+  retention_days: 7       # days to keep log files
+  path: ./logs            # directory for logs
+  debug: false            # enable debug-level logs
+
+paths:
+  registrations: ./data/registrations.txt
+  proxies: ./data/proxies.txt
+  wallets: ./data/private_keys.txt
+  accounts: ./data/accounts.txt
 ```
 
 ### Data Files Format
@@ -140,12 +164,13 @@ If you don't have a license key, please contact the developer.
 
 ## Main Operations 📝
 
-- **Register new accounts** - Register new accounts on the Teneo platform
-- **Re-verify unverified** - Try to verify accounts that weren't verified
-- **Start farming** - Start automatic farming process
-- **Check and claim tasks** - Process all available tasks
-- **Link wallets** - Link ETH wallets to accounts
-- **Update accounts data** - Update account data from farming.txt
+- **Register new accounts** – load from `data/registrations.txt`, register on Teneo, and save tokens to database.
+- **Re-verify unverified accounts** – retry email verification for failed registrations listed in `results/unverified.txt`.
+- **Start farming** – load from `data/farming.txt` and perform WebSocket farming sessions.
+- **Check and claim tasks** – load from `data/task.txt` and process tasks for each account.
+- **Link wallets** – load from `data/wallet_connect.txt` and link ETH wallets to accounts.
+- **Update account data** – load from `data/authorizations.txt`, authenticate accounts, and update their stats.
+- **Export account statistics** – export all account data and stats to a CSV file in `results/`.
 
 ### Email Requirements ⚠️
 
