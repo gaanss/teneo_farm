@@ -68,34 +68,44 @@ registration:
 
 ### Data Files Format
 
-1. `data/accounts.txt` - list of accounts for registration:
+1. `data/registrations.txt` - list of accounts for registration:
    ```
-   email:password
    email:password
    ```
 
-2. `data/farming.txt` - list of accounts for farming:
+2. `data/reff_codes.txt` - list of referral codes:
    ```
-   email:password
-   email:password
+   code
    ```
 
 3. `data/proxies.txt` - list of proxies (one per line):
    ```
    username:password@host:port
-   username:password@host:port
    ```
 
-4. `data/wallets.txt` - list of ETH wallets:
+4. `data/farming.txt` - list of accounts for farming:
    ```
-   private_key
-   private_key
+   email:password
    ```
 
-5. `data/reff_codes.txt` - list of referral codes:
+5. `data/task.txt` - list of accounts for task processing:
    ```
-   code
-   code
+   email:password
+   ```
+
+6. `data/wallet_connect.txt` - list of accounts for wallet linking:
+   ```
+   email:password
+   ```
+
+7. `data/authorizations.txt` - list of accounts for updating account data:
+   ```
+   email:password
+   ```
+
+8. `data/private_keys.txt` - list of Ethereum private keys:
+   ```
+   private_key
    ```
 
 ## License System 🔑
